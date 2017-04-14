@@ -1,0 +1,53 @@
+a {
+  text-decoration: none;
+  color: #3b7ddb;
+  font-size: 12px;
+}
+.main {
+  width: 500px;
+  height: 800px;
+  margin: 0 auto;
+  font-family: 'Microsoft yahei';
+  position: relative;
+}
+.main #lblResponse {
+  border-collapse: collapse;
+  width: 100%;
+}
+.main #lblResponse th,
+.main #lblResponse td {
+  border: 1px solid #ddd;
+  width: 14%;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  font-weight: normal;
+}
+.main p {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.main p input {
+  width: 40%;
+  float: left;
+  outline: none;
+  border: 1px solid #ddd;
+  height: 26px;
+  margin-left: 5px;
+  text-indent: 1em;
+}
+.main p a {
+  padding: 0 5px;
+  height: 26px;
+  float: right;
+  display: inline-block;
+  text-align: center;
+  line-height: 26px;
+  background: #4aa2e5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #fff;
+}

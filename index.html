@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="main">
+		<table id="lblResponse"></table>
+
+		<form action="http://127.0.0.1:3000/add" method="post" id="add">
+			<p>
+				<input type="text" placeholder="输入序号" maxlength="3" name="xuhao">
+				<input type="text" placeholder="输入数字" maxlength="5" name="shuzi">
+				<a href="javascript:;" id="addData">添加数据</a>
+				<!-- <input type="submit" name="tianjia" value="添加数据" style="color:#333;"> -->
+			</p>
+		</form>
+	</div>
+</body>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//初始化数据
+		// initData();
+
+		//添加数据
+		$('#addData').live('click',function(){
+			$('#add').submit();
+		})
+	})
+
+
+//渲染数据到页面
+function initData(){
+	$.ajax({
+		url: 'http://127.0.0.1:3000/',
+		dataType: "jsonp",
+		data: '{"data": "TEST"}',
+		type: 'POST',
+		jsonpCallback: 'callback', 
+		success: function (data) {
+			var data = JSON.parse(data);
+			var res = data.msg;
+			var str = `<tr>
+									<th>序号</th>
+									<th>第一位</th>
+									<th>第二位</th>
+									<th>第三位</th>
+									<th>第四位</th>
+									<th>第五位</th>
+									<th>操作</th>
+								</tr>`;
+			var len = res.length;
+			for(var i = 0; i < len; i++){
+				str += `<tr>
+					<td>${res[i].id}</td>
+					<td>${res[i].num1}</td>
+					<td>${res[i].num2}</td>
+					<td>${res[i].num3}</td>
+					<td>${res[i].num4}</td>
+					<td>${res[i].num5}</td>
+					<td><a href="javascript:;">删除</a></td>
+				</tr>`
+			}
+			$('#lblResponse').html('').append(str);
+		}
+	});
+}
+</script>
+</html>

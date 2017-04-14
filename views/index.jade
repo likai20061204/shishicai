@@ -1,0 +1,31 @@
+doctype
+html
+	head
+		meta(charset="utf-8")
+		title #{title}
+		link(rel="stylesheet" type="text/css" href="./main.css")
+	body
+		.main(style="width:800px;")
+			div(style="height:700px;overflow-y:auto;border-bottom:1px solid #ddd;" id="list")
+				table#lblResponse
+					tr
+						th 序号
+						th 第一位
+						th 第二位
+						th 第三位
+						th 第四位
+						th 第五位
+					each item in data
+						tr
+							td 0
+							td #{item.num1}
+							td #{item.num2}
+							td #{item.num3}
+							td #{item.num4}
+							td #{item.num5}
+				form(action="/add" method="post" id="add")
+					p
+						input(type="text" placeholder="输入数字" maxlength="5" name="shuzi")
+						a(href="javascript:;" id="addData" style="float:left;margin-left:10px") 添加数据
+	script(type="text/javascript" src="jquery.js")
+	script(type="text/javascript" src="aa.js")

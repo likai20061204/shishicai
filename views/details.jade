@@ -1,0 +1,15 @@
+doctype
+html
+	head
+		meta(charset="utf-8")
+		title #{title}
+		link(rel="stylesheet" type="text/css" href="./main.css")
+	body
+		.main
+			form(action="/add" method="post" id="add")
+				p
+					input(type="text" placeholder="输入序号" maxlength="3" name="xuhao")
+					input(type="text" placeholder="输入数字" maxlength="5" name="shuzi")
+					a(href="javascript:;" id="addData") 添加数据
+	script(type="text/javascript" src="jquery.js")
+	script(type="text/javascript" src="aa.js")
